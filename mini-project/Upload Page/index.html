@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Upload</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="nav_container">
+      <header>
+        <nav class="navbar">
+          <div class="section nav-left">
+            <a href="#" class="nav-logo">
+              <img src="images/logo.png" alt="Logo" class="logo-image" />
+              <h2 class="logo-text">LearnVista</h2>
+            </a>
+          </div>
+          <div class="section nav-mid">
+            <form action="#" class="search-form">
+              <input
+                type="search"
+                placeholder="Search"
+                required
+                class="search-input"
+              />
+              <button class="search-button">
+                <img src="images/search.png" alt="Search Icon" />
+              </button>
+            </form>
+          </div>
+          <div class="section nav-right">
+            <img src="images/profile.png" alt="User Profile" class="user-img" />
+          </div>
+        </nav>
+      </header>
+
+      <div class="container">
+        <div class="upload-container">
+          <h2>Upload Your Video</h2>
+          <form>
+            <label for="title">Video Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Enter video title"
+              required
+            />
+
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Enter video description (links supported)"
+              rows="3"
+              required
+            ></textarea>
+
+            <label for="thumbnail">Upload Thumbnail</label>
+            <input
+              type="file"
+              id="thumbnail"
+              name="thumbnail"
+              accept="image/*"
+              required
+            />
+            <button type="button" id="remove-thumbnail">
+              Remove Thumbnail
+            </button>
+
+            <label for="video">Upload Video</label>
+            <input
+              type="file"
+              id="video"
+              name="video"
+              accept="video/*"
+              required
+            />
+            <button type="button" id="remove-video">Remove Video</button>
+
+            <button type="submit">Upload Video</button>
+          </form>
+        </div>
+
+        <div class="preview-container" id="preview-container">
+          <h2>Video Preview</h2>
+          <video id="video-preview" controls></video>
+        </div>
+      </div>
+
+      <script>
+        document
+          .getElementById("video")
+          .addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+              const previewContainer =
+                document.getElementById("preview-container");
+              const videoPreview = document.getElementById("video-preview");
+              videoPreview.src = URL.createObjectURL(file);
+              previewContainer.style.display = "block";
+            }
+          });
+
+        document
+          .getElementById("remove-video")
+          .addEventListener("click", function () {
+            const videoInput = document.getElementById("video");
+            const videoPreview = document.getElementById("video-preview");
+            videoInput.value = "";
+            videoPreview.src = "";
+            document.getElementById("preview-container").style.display = "none";
+          });
+
+        document
+          .getElementById("remove-thumbnail")
+          .addEventListener("click", function () {
+            document.getElementById("thumbnail").value = "";
+          });
+      </script>
+    </div>
+  </body>
+</html>

@@ -3,13 +3,65 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    overflow-y: auto;
-    scrollbar-width: thin;
 }
 
 html, body {
     overflow-x: hidden;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    background: #203a43;
+    z-index: 50;
+  }
+  .navbar .logo-image, .navbar .user-img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .navbar .logo-image { width: 64px; height: 64px; }
+  .navbar .section, .navbar .search-form, .navbar .nav-logo {
+    display: flex;
+    align-items: center;
+  }
+  .navbar .section { gap: 1rem; }
+  .navbar .nav-logo { gap: 0.5rem; text-decoration: none; }
+  .navbar .logo-text { font-size: 1.5rem; color: aliceblue; }
+  .navbar .menu-button {
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #203a43;
+  }
+  .search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-input {
+    width: 450px;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+  }
+  .search-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0.4rem;
+  }
+  
 
 body {
     background-color: #e5e7eb;

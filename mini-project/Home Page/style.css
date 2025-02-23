@@ -67,9 +67,9 @@
 }
 
 .main-layout .sidebar {
-  width: 250px; /* Adjust as needed */
-  height: calc(100vh - 5rem); /* Full height of the viewport */
-  position: fixed; /* Ensures it stays in place */
+  width: 250px; 
+  height: calc(100vh - 5rem); 
+  position: fixed; 
   top:5rem;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -77,7 +77,7 @@
   background-color: #e5e7eb;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  overflow-y: scroll; /* Enables scrolling if content exceeds height */
+  overflow-y: scroll; 
   z-index: 100;
 
 }
